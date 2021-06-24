@@ -2,10 +2,13 @@ import React, {useLayoutEffect} from "react";
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import sales from "../sales.json";
+import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+
+am4core.useTheme(am4themes_animated);
 const StackedArea = () => {
 
-
     useLayoutEffect(() => {
+        
         let chart = am4core.create("chartdiv", am4charts.XYChart);
         chart.data = sales;
         chart.numberFormatter.numberFormat = "#,##a";
